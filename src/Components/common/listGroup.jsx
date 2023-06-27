@@ -8,11 +8,12 @@ const ListGroup = (props) => {
     <ul className="list-group">
       {items.map((item) => (
         <li
-          style={{ cursor: "pointer" }}
           onClick={() => onItemSelect(item)}
           key={item[valueProperty]}
           className={
-            item === selectedItem ? "list-group-item active" : "list-group-item"
+            item === selectedItem
+              ? "list-group-item active clickable"
+              : "list-group-item clickable"
           }
         >
           {item[textProperty]}
